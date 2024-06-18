@@ -6,6 +6,8 @@ const optionOne = document.getElementById("option-one");
 const optionTwo = document.getElementById("option-two");
 const copyBtnOne = document.getElementById("copy-btn-one");
 const copyBtnTwo = document.getElementById("copy-btn-two");
+const passwordContainerOne = document.getElementById("password-container-one");
+const passwordContainerTwo = document.getElementById("password-container-two");
 
 let passwordLength = 15;
 
@@ -30,12 +32,17 @@ function generatePassword() {
     return generatedPassword;
 }
 
-function copyPassword() {
-    console.log(passwordLength);
-}
+copyBtnOne.addEventListener("click", function() {
+    copyPassword(optionOne);
+});
 
-navigator.permissions.query({ name: "write-on-clipboard" }).then((result) => {
-    if (result.state == "granted" || result.state == "prompt") {
-      alert("Write access granted!");
-    }
-  });
+copyBtnTwo.addEventListener("click", function() {
+    copyPassword(optionTwo);
+});
+
+function copyPassword(option) {
+    option.select()
+    option.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(option.value);
+    alert("Password has been copied to clipboard.");
+}
