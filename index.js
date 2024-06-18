@@ -1,9 +1,11 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
-"/"];
+const lettersAndNumbers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const specialCharacters = [,"~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"];
+const allCharacters = lettersAndNumbers.concat(specialCharacters);
 
 const generateBtn = document.getElementById("generate-btn");
 const passwordSettingsBtn = document.getElementById("password-settings-btn");
 const passwordSettingsDiv = document.getElementById("password-settings-div");
+const includeSpecialChars = document.getElementById("include-special-chars");
 const optionOne = document.getElementById("option-one");
 const optionTwo = document.getElementById("option-two");
 const copyBtnOne = document.getElementById("copy-btn-one");
@@ -12,8 +14,14 @@ const passwordContainerOne = document.getElementById("password-container-one");
 const passwordContainerTwo = document.getElementById("password-container-two");
 
 function getRandomCharacter() {
-    let randomChar = Math.floor(Math.random() * characters.length);
-    return characters[randomChar];
+    let randomCharIndex;
+    if (includeSpecialChars.checked) {
+        randomCharIndex = Math.floor(Math.random() * allCharacters.length);
+        return allCharacters[randomCharIndex];
+    } else {
+        randomCharIndex = Math.floor(Math.random() * lettersAndNumbers.length);
+        return lettersAndNumbers[randomCharIndex];
+    }
 }
 
 generateBtn.addEventListener("click", function() {
