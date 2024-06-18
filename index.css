@@ -13,6 +13,7 @@ body {
     background-color: #1F2937;
     max-width: 600px;
     height: 100vh;
+    font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
 }
 
 #title {
-    font-family: "Karla", sans-serif;
+    font-family: "Karla", sans-serif !important;
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 5px;
@@ -29,10 +30,6 @@ body {
 .title-green-text {
     color: #4ADF86;
     display: block;
-}
-
-#description, #generate-btn, .password-container {
-    font-family: "Inter", sans-serif;
 }
 
 #description {
@@ -48,16 +45,52 @@ body {
     background-color: #10B981;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #generate-btn {
     font-size: 16px;
     padding: 8px 16px;
-    margin: 40px 0 20px 0;
+    margin: 40px 0 10px 0;
 }
 
-.copy-btn {
-    padding: 4px 8px;
+.link-btn {
+    display: block;
+    color: #55F991;
+    background-color: #1F2937;
+    border: none;
+    font-size: 12px;
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#password-settings-div {
+    display: none;
+}
+
+.password-setting {
+    margin: 5px;
+}
+
+.password-setting label {
+    color: #D5D4D8;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+#password-length {
+    font-family: "Inter", sans-serif;
+    background-color: #273549;
+    color: #55F991;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
 }
 
 .password-container {
@@ -67,7 +100,7 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-top: 40px;
 }
 
@@ -79,6 +112,7 @@ body {
 }
 
 .password-option {
+    font-family: "Inter", sans-serif;
     background-color: #273549;
     color: #55F991;
     font-size: 16px;
@@ -89,4 +123,8 @@ body {
     width: 200px;
     height: 40px;
     text-align: center;
+}
+
+.copy-btn {
+    padding: 4px 8px;
 }
