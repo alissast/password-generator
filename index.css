@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    color: white;
+    background-color: #1F2937;
+    max-width: 600px;
+    height: 100vh;
+}
+
+.container {
+    margin: 70px 40px;
+}
+
+#title {
+    font-family: "Karla", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.title-green-text {
+    color: #4ADF86;
+    display: block;
+}
+
+#description, #generate-btn, .password-container {
+    font-family: "Inter", sans-serif;
+}
+
+#description {
+    color: #D5D4D8;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    color: white;
+    background-color: #10B981;
+    border: none;
+    border-radius: 5px;
+}
+
+#generate-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 40px 0 20px 0;
+}
+
+.copy-btn {
+    padding: 4px 8px;
+}
+
+.password-container {
+    border-top: 2px solid #2F3E53;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+    padding-top: 40px;
+}
+
+.password-option-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.password-option {
+    background-color: #273549;
+    color: #55F991;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+}
