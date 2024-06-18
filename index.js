@@ -59,8 +59,10 @@ function copyPassword(option) {
 function showPasswordOptions() {
     if (passwordSettingsDiv.style.display === "none") {
         passwordSettingsDiv.style.display = "block";
+        passwordSettingsBtn.textContent = "Hide password options";
     } else {
         passwordSettingsDiv.style.display = "none";
+        passwordSettingsBtn.textContent = "Show password options";
     }
 }
 
