@@ -17,7 +17,7 @@
     <div class="container">
         <header>
             <h1 id="title">Generate a <span class="title-green-text">random password</span></h1>
-             <button type="button" class="btn" id="dark-mode-toggle" aria-label="Change to light theme">
+             <button type="button" class="btn icon-btn" id="dark-mode-toggle" aria-label="Change to light theme">
                 <span class="material-symbols-outlined">dark_mode</span>
              </button>
         </header>
@@ -30,18 +30,18 @@
                 <input type="number" id="password-length" min="1" value="15" />
             </div>
             <div id="special-char-setting" class="password-setting">
-                <label for="include-special-chars">Include special characters? (example)</label>
+                <label for="include-special-chars">Include special characters?</label>
                 <input type="checkbox" id="include-special-chars" checked />
             </div>
         </div>
         <div class="password-container" id="password-container-one">
             <div class="password-option-container">
                 <input type="text" id="option-one" value="" class="password-option" />
-                <button class="btn copy-btn" id="copy-btn-one"><span class="material-symbols-outlined" aria-label="Copy password">content_copy</span></button>
+                <button class="btn icon-btn" id="copy-btn-one"><span class="material-symbols-outlined" aria-label="Copy password">content_copy</span></button>
             </div>
             <div class="password-option-container" id="password-container-two">
                 <input type="text" id="option-two" value="" class="password-option" title="Copy password" />
-                <button class="btn copy-btn" id="copy-btn-two" aria-label="Copy password" title="Copy password"><span class="material-symbols-outlined">content_copy</span></button>
+                <button class="btn icon-btn" id="copy-btn-two" aria-label="Copy password" title="Copy password"><span class="material-symbols-outlined">content_copy</span></button>
             </div>
         </div>
     </div>
