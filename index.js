@@ -1,5 +1,5 @@
 const lettersAndNumbers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const specialCharacters = [,"~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"];
+const specialCharacters = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"];
 const allCharacters = lettersAndNumbers.concat(specialCharacters);
 
 const generateBtn = document.getElementById("generate-btn");
@@ -12,6 +12,23 @@ const copyBtnOne = document.getElementById("copy-btn-one");
 const copyBtnTwo = document.getElementById("copy-btn-two");
 const passwordContainerOne = document.getElementById("password-container-one");
 const passwordContainerTwo = document.getElementById("password-container-two");
+const darkModeBtn = document.getElementById("dark-mode-toggle");
+
+document.addEventListener("DOMContentLoaded", function() {
+    updateDarkModeSetting();
+});
+
+darkModeBtn.addEventListener("click", function() {
+    updateDarkModeSetting();
+});
+
+function updateDarkModeSetting() {
+    const currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+    const iconHTML = currentTheme === "dark" ? `<span class="material-symbols-outlined">dark_mode</span>` : `<span class="material-symbols-outlined">light_mode</span>`;
+    darkModeBtn.innerHTML = iconHTML;
+    document.body.classList.toggle("dark-theme");
+    document.body.classList.toggle("light-theme");
+}
 
 function getRandomCharacter() {
     let randomCharIndex;
@@ -22,9 +39,10 @@ function getRandomCharacter() {
         randomCharIndex = Math.floor(Math.random() * lettersAndNumbers.length);
         return lettersAndNumbers[randomCharIndex];
     }
-}
+};
 
 generateBtn.addEventListener("click", function() {
+    console.log("Generate button clicked");
     const firstPassword = generatePassword();
     const secondPassword = generatePassword();
     optionOne.value = firstPassword;
@@ -69,3 +87,4 @@ function showPasswordOptions() {
 passwordSettingsBtn.addEventListener("click", function() {
     showPasswordOptions();
 });
+

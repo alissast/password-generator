@@ -4,13 +4,30 @@
     box-sizing: border-box;
 }
 
+.light-theme {
+    --color-bg: #ECFDF5;
+    --color-fg: #6B7280;
+    --color-title-main: #2B283A;
+    --color-title-green: #10B981;
+    --color-link-text: #10B981;
+}
+
+.dark-theme {
+    --color-bg: #1F2937;
+    --color-fg: #D5D4D8;
+    --color-title-main: #FFFFFF;
+    --color-title-green: #4ADF86;
+    --color-link-text: #4ADF86;
+}
+
 html, body {
     margin: 0;
+    padding: 0;
 }
 
 body {
-    color: white;
-    background-color: #1F2937;
+    color: var(--color-fg);
+    background-color: var(--color-bg);
     max-width: 600px;
     height: 100vh;
     font-family: "Inter", sans-serif;
@@ -20,20 +37,32 @@ body {
     margin: 70px 40px;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+html {
+    margin: 70px 40px;
+}
+
 #title {
-    font-family: "Karla", sans-serif !important;
+    font-family: "Karla", sans-serif;
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 5px;
+    color: var(--color-title-main);
 }
 
 .title-green-text {
-    color: #4ADF86;
+    color: var(--color-title-green);
     display: block;
 }
 
 #description {
-    color: #D5D4D8;
+    color: var(--color-fg);
     font-size: 20px;
     font-weight: 400;
     margin-top: 5px;
@@ -56,8 +85,8 @@ body {
 
 .link-btn {
     display: block;
-    color: #55F991;
-    background-color: #1F2937;
+    color: var(--color-link-text);
+    background-color: var(--color-bg);
     border: none;
     font-size: 12px;
     font-style: italic;
@@ -74,7 +103,7 @@ body {
 }
 
 .password-setting label {
-    color: #D5D4D8;
+    color: var(--color-fg);
     font-size: 14px;
     margin-right: 5px;
 }
