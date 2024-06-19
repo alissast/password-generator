@@ -15,19 +15,23 @@ const passwordContainerTwo = document.getElementById("password-container-two");
 const darkModeBtn = document.getElementById("dark-mode-toggle");
 
 document.addEventListener("DOMContentLoaded", function() {
-    updateDarkModeSetting();
+    updateDarkModeBtn();
 });
 
 darkModeBtn.addEventListener("click", function() {
-    updateDarkModeSetting();
+    toggleDarkMode();
+    updateDarkModeBtn();
 });
 
-function updateDarkModeSetting() {
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-theme");
+    document.body.classList.toggle("light-theme");
+}
+
+function updateDarkModeBtn() {
     const currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
     const iconHTML = currentTheme === "dark" ? `<span class="material-symbols-outlined">dark_mode</span>` : `<span class="material-symbols-outlined">light_mode</span>`;
     darkModeBtn.innerHTML = iconHTML;
-    document.body.classList.toggle("dark-theme");
-    document.body.classList.toggle("light-theme");
 }
 
 function getRandomCharacter() {
